@@ -1,0 +1,14 @@
+<div>
+  <h4>User : <%= @post.user.full_name %> </h4>
+  <p>Desc : <%= @post.description %></p>
+  <% if @post.image.attached? %>
+      <%= image_tag url_for(@post.image), size: '200x200' %>
+  <% end %>
+  <p>Timestamp : <%= @post.created_at %> </p>
+</div>
+<br>
+
+<%= link_to 'EDIT', edit_post_path(@post) if current_user.id == @post.user.id %> |
+<%= link_to 'BACK', posts_path %>
+
+

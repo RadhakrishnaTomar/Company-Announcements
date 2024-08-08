@@ -1,0 +1,15 @@
+current directory: /home/deepak/Rails_PRJ/social_app/vendor/bundle/ruby/3.0.0/gems/stringio-3.1.1/ext/stringio
+/home/deepak/.rvm/rubies/ruby-3.0.0/bin/ruby -I /home/deepak/.rvm/rubies/ruby-3.0.0/lib/ruby/3.0.0 -r ./siteconf20240808-5323-xk5fw5.rb extconf.rb
+creating Makefile
+
+current directory: /home/deepak/Rails_PRJ/social_app/vendor/bundle/ruby/3.0.0/gems/stringio-3.1.1/ext/stringio
+make "DESTDIR=" clean
+
+current directory: /home/deepak/Rails_PRJ/social_app/vendor/bundle/ruby/3.0.0/gems/stringio-3.1.1/ext/stringio
+make "DESTDIR="
+compiling stringio.c
+linking shared-object stringio.so
+
+current directory: /home/deepak/Rails_PRJ/social_app/vendor/bundle/ruby/3.0.0/gems/stringio-3.1.1/ext/stringio
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 stringio.so ./.gem.20240808-5323-k9w6zl

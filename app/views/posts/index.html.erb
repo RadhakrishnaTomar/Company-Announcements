@@ -1,0 +1,21 @@
+<h1>All Posts</h1>
+
+<%= link_to 'NEW POST', new_post_path, class: "auth-link" %>
+
+<ul>
+  <% @posts.each do |post| %>
+    <p>
+    <li>
+      <% if post.image.attached? %>
+        <%= link_to (image_tag url_for(post.image), size: '50x50'),post %>
+      <% end %>
+      <%= link_to post.description, post %> 
+  
+      <% if current_user.id == post.user.id %>
+        <%= link_to 'EDIT', edit_post_path(post) %> 
+        <%= link_to 'DESTROY', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>    
+    </li>  
+    </p>
+  <% end %>
+</ul>
