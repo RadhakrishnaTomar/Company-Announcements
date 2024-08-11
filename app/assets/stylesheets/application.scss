@@ -14,6 +14,7 @@
  *= require_self
  */
  
+ @import "bootstrap";
 
  #right {
     position: fixed;
@@ -35,3 +36,35 @@
     margin-right: 0; 
   }
 
+.navbar {
+  background-color: #FDF6EA !important;
+  background-color: black !important;
+}
+
+.nav-link
+{
+    color: white !important;
+}
+
+#logo
+{
+  float: left;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#home-container {
+  margin-top: 25px;
+}
+
+
+.jumbotron {
+  background-image: asset-url('jumbo-copy.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 425px;
+}

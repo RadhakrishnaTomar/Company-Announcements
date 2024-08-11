@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> Social App </title>
+    <title>Social App</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,26 +11,29 @@
   </head>
 
   <body>
+    <!-- Render the navigation bar -->
+    <%= render 'layouts/navigation' %>
+
+    <!-- Display notices and alerts -->
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <h3> SOCIAL APP </h3>
-  
-    <p> <%= link_to "HOME", root_path ,class: "auth-link"%> </p>
+    <!-- Main content -->
+    <%# <h3>SOCIAL APP</h3> %>
+
+    <%#<p><%= link_to "HOME", root_path, class: "auth-link" %></p> 
+    
     <% if user_signed_in? %>
-      <p><%= link_to "POSTS", posts_path,class: "auth-link" %></p>
+      <p><%= link_to "POSTS", posts_path, class: "auth-link" %></p>
       <p><%= link_to "USERS", users_index_path, class: "auth-link" %></p>
       <div id="right">
-        <p><%= link_to current_user.email, user_show_path(current_user.id) %> </p>
-        <%# link_to "EDIT", edit_user_registration_path %> </p>
+        <p><%= link_to current_user.email, user_show_path(current_user.id) %></p>
         <p><%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class: "auth-link" %></p>
       </div>
     <% else %>
-    <div>
-      <%= link_to "SIGN UP", new_user_registration_path,class: "auth-link" %>
-      <%= link_to "LOG IN", new_user_session_path,class: "auth-link" %>
-    </div>
     <% end %>
+
+    <!-- Main content area where views are rendered -->
     <%= yield %>
   </body>
 </html>

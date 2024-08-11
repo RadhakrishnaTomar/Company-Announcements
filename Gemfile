@@ -68,3 +68,5 @@ end
 
 gem 'devise'
 gem 'activestorage'
+gem "bootstrap"
+gem "sassc-rails"
