@@ -70,3 +70,4 @@ gem 'devise'
 gem 'activestorage'
 gem "bootstrap"
 gem "sassc-rails"
+gem 'byebug'
