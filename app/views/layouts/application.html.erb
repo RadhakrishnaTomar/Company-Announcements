@@ -23,15 +23,15 @@
 
     <%#<p><%= link_to "HOME", root_path, class: "auth-link" %></p> 
     
-    <% if user_signed_in? %>
-      <p><%= link_to "POSTS", posts_path, class: "auth-link" %></p>
-      <p><%= link_to "USERS", users_index_path, class: "auth-link" %></p>
-      <div id="right">
-        <p><%= link_to current_user.email, user_show_path(current_user.id),class: "btn btn-info" %></p>
-        <p><%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class: "btn btn-outline-danger" %></p>
-      </div>
-    <% else %>
-    <% end %>
+    <%# <% if user_signed_in? %> 
+      <%# <p><%= link_to "POSTS", posts_path, class: "auth-link" %></p> 
+      <%# <p><%= link_to "USERS", users_index_path, class: "auth-link" %></p>
+      <%# <div id="right"> %>
+        <%# <p><%= link_to current_user.email, user_show_path(current_user.id),class: "btn btn-info" %></p> 
+        <%# <p><%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class: "btn btn-outline-danger" %></p>
+      <%# </div> %>
+   <%#  <% else %>
+    <%# <% end %>
 
     <!-- Main content area where views are rendered -->
     <%= yield %>
