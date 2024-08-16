@@ -1,25 +1,11 @@
-<h1>User Details</h1>
+<h2>UserDaitalse</h2>
+  <p><strong>FullName: </strong><%= @user.full_name %></p>
+  <p><strong>MobileNumber: </strong><%= @user.mobile_number %></p>
+  <p><strong>Email: </strong><%= @user.email %></p>
+  <p><strong>Address: </strong><%= @user.address %></p>
 
-<p>
-  <strong>Full Name :</strong>
-  <%= @user.full_name %>
-</p>
-
-<p>
-  <strong>Mobile Nu :</strong>
-  <%= @user.mobile_number %>
-</p>
-
-<p>
-  <strong>Email :</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Address :</strong>
-  <%= @user.address %>
-</p>
-
-<%= link_to 'Back', users_index_path %>
-<%= link_to "EDIT" , edit_user_registration_path if current_user.id == @user.id %>
-
+  <p>
+    <%= link_to 'Back', users_index_path,class: 'btn btn-primary' %>
+    <%= link_to "Edit",edit_user_registration_path, class: "btn btn-primary" if current_user.id == @user.id %>
+  </p>
+  
