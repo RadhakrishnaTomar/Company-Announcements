@@ -9,8 +9,9 @@ Rails.application.routes.draw do
   get 'users_index', to: 'home#users_index'
   get 'users/:id', to: 'home#user_show', as: :user_show
 
+  resources :users, only: [] do
+    resources :comments, only: [:create, :destroy], controller: 'home'
+  end
+
   root to: "home#index"
 end
-
-
-
