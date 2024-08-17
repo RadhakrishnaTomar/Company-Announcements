@@ -1,0 +1,28 @@
+<div class="comment">
+  <p><strong><%= comment.user.full_name %></strong> <small><%= comment.created_at.strftime("%Y-%m-%d %H:%M") %></small></p>
+  <p><%= comment.content %></p>
+
+  <% if comment.nested_replies.any? %>
+    <div class="nested-comments">
+      <%= render partial: 'comments/comment', collection: comment.nested_replies %>
+    </div>
+  <% end %>
+
+  <%= link_to 'Reply', '#', class: 'reply-link', data: { comment_id: comment.id } %>
+
+  <% if comment.user == current_user  %>
+    <%= button_to 'Delete', post_comment_path(comment.commentable, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+
+  <div class="reply-form" data-comment-id="<%= comment.id %>" style="display: none;">
+    <%= form_with model: [comment.commentable, Comment.new], local: true do |form| %>
+      <%= form.hidden_field :parent_id, value: comment.id %>
+      <div class="field">
+        <%= form.text_area :content, rows: 2, placeholder: 'Write a reply...' %>
+      </div>
+      <div class="actions">
+        <%= form.submit 'Reply' %>
+      </div>
+    <% end %>
+  </div>
+</div>
